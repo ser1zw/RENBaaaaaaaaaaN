@@ -51,7 +51,7 @@
             // RenBaaaaaaaaaNGroup
             // 
             this.RenBaaaaaaaaaNGroup.Items.Add(this.openInputPanelButton);
-            this.RenBaaaaaaaaaNGroup.Label = "RenBaaaaaaaaaN";
+            this.RenBaaaaaaaaaNGroup.Label = "RENBaaaaaaaaaN";
             this.RenBaaaaaaaaaNGroup.Name = "RenBaaaaaaaaaNGroup";
             // 
             // openInputPanelButton
