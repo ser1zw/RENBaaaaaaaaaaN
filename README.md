@@ -19,7 +19,12 @@ Excelのオートシェイプに連番を付与するExcelアドイン。
 
 ## インストーラ作成
 
-VisualStudioのメニューより、 [ビルド]-[RENBaaaaaaaaaaN の発行] - [完了]
+VisualStudioのメニューより、 [ビルド]-[RENBaaaaaaaaaaN の発行]-[完了]
+
+
+## アンインストール
+
+「プログラムの追加と削除」から RENBaaaaaaaaaaN を選択してアンインストール
 
 
 ## ライセンス
