@@ -1,15 +1,30 @@
-﻿namespace RENBaaaaaaaaaaN
+﻿using System.Collections.Generic;
+
+namespace RENBaaaaaaaaaaN
 {
     public partial class ThisAddIn
     {
         public const string ADDIN_NAME = "RENBaaaaaaaaaaN";
-        public Microsoft.Office.Tools.CustomTaskPane InputPanelPane { get; private set; }
+        private Dictionary<int, Microsoft.Office.Tools.CustomTaskPane> inputPanels;
+
+        public void ShowInputPanel()
+        {
+            var activeWindow = Globals.ThisAddIn.Application.ActiveWindow;
+            Microsoft.Office.Tools.CustomTaskPane inputPanelPane;
+
+            var found = inputPanels.TryGetValue(activeWindow.Hwnd, out inputPanelPane);
+            if (!found)
+            {
+                var inputPanel = new InputPanel();
+                inputPanelPane = this.CustomTaskPanes.Add(inputPanel, ADDIN_NAME, activeWindow);
+                inputPanels.Add(activeWindow.Hwnd, inputPanelPane);
+            }
+            inputPanelPane.Visible = true;
+        }
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            var inputPanel = new InputPanel();
-            InputPanelPane = this.CustomTaskPanes.Add(inputPanel, ADDIN_NAME);
-            InputPanelPane.Visible = false;
+            inputPanels = new Dictionary<int, Microsoft.Office.Tools.CustomTaskPane>();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -27,7 +42,7 @@
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }

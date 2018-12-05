@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Office.Tools.Ribbon;
+﻿using Microsoft.Office.Tools.Ribbon;
 
 namespace RENBaaaaaaaaaaN
 {
@@ -10,12 +6,11 @@ namespace RENBaaaaaaaaaaN
     {
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
-
         }
 
         private void openInputPanelButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.ThisAddIn.InputPanelPane.Visible = true;
+            Globals.ThisAddIn.ShowInputPanel();
         }
     }
 }
