@@ -14,7 +14,7 @@ Excelのオートシェイプに連番を付与するExcelアドイン。
 
 - Windows 10 (64bit)
 - Visual Studio 2017 Community
--- [Office Developer Tools for Visual Studio 2017](https://visualstudio.microsoft.com/ja/vs/features/office-tools/)
+- [Office Developer Tools for Visual Studio 2017](https://visualstudio.microsoft.com/ja/vs/features/office-tools/)
 
 
 ## インストーラ作成
